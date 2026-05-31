@@ -1,0 +1,20 @@
+# Opcional: docker-compose para levantar el proyecto más fácil.
+# No es obligatorio si la rúbrica pide comandos docker build y docker run.
+services:
+  tarea6-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DOTNET_VERSION: "9.0"
+    image: tarea6-mvc:v1
+    container_name: tarea6-web
+    ports:
+      - "8080:8080"
+    networks:
+      - red-tarea6
+    restart: unless-stopped
+
+networks:
+  red-tarea6:
+    driver: bridge
