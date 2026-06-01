@@ -1,27 +1,4 @@
-# ========================================================================================
-# .dockerignore - Proyecto ASP.NET Core MVC
-# Evita copiar archivos pesados o innecesarios al contexto Docker.
-# ========================================================================================
-
-bin/
-obj/
-.vs/
-.vscode/
-.git/
-.gitignore
-
 Dockerfile
-docker-compose*
-*.user
-*.suo
-*.log
-
-TestResults/
-coverage/
-
-node_modules/
-dist/
-build/
-
-README*
-*.md
+.git
+bin
+obj
