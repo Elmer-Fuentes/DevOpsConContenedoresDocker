@@ -19,8 +19,10 @@ RUN dotnet restore "DevOpsConContenedoresDocker.csproj"
 # ETAPA 3: Compilación
 # ==========================================
 COPY . .
-RUN dotnet build "DevOpsConContenedoresDocker.csproj" -c Release -o /app/build
 
+# Eliminamos el Dockerfile dentro del contenedor antes de compilar
+RUN rm -f Dockerfile
+RUN dotnet build "DevOpsConContenedoresDocker.csproj" -c Release -o /app/build
 # ==========================================
 # ETAPA 4: Publicación
 # ==========================================
