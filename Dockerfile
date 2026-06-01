@@ -9,9 +9,8 @@ WORKDIR /src
 COPY ["DevOpsConContenedoresDocker.csproj", "./"]
 RUN dotnet restore "DevOpsConContenedoresDocker.csproj"
 
-# Copia todo el resto y compila
-COPY . .
-RUN dotnet build "DevOpsConContenedoresDocker.csproj" -c Release -o /app/build
+# ESTO ES LO QUE NECESITAS:
+RUN rm -f Dockerfile && dotnet build "DevOpsConContenedoresDocker.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "DevOpsConContenedoresDocker.csproj" -c Release -o /app/publish
