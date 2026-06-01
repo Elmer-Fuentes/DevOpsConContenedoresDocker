@@ -14,9 +14,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copiar UNICAMENTE el archivo .csproj desde la subcarpeta
-COPY ["DevOpsConContenedoresDocker/DevOpsConContenedoresDocker.csproj", "DevOpsConContenedoresDocker/"]
-RUN dotnet restore "DevOpsConContenedoresDocker/DevOpsConContenedoresDocker.csproj" --verbosity detailed
-
+COPY ["DevOpsConContenedoresDocker.csproj", "./"]
+RUN dotnet restore "DevOpsConContenedoresDocker.csproj" --verbosity detailed
 # ==========================================
 # ETAPA 3: Compilación del código fuente
 # ==========================================
