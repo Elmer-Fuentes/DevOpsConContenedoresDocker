@@ -1,0 +1,21 @@
+# ========================================================================================
+# docker-compose opcional - DevOpsConContenedoresDocker
+# No es obligatorio para la tarea si usarás docker build y docker run manual.
+# ========================================================================================
+
+services:
+  devops-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: devopscontenedoresdocker:v1
+    container_name: devops-web
+    ports:
+      - "8080:8080"
+    networks:
+      - red-tarea6
+    restart: unless-stopped
+
+networks:
+  red-tarea6:
+    driver: bridge

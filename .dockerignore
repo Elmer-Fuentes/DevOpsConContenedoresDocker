@@ -1,0 +1,23 @@
+# ========================================================================================
+# .dockerignore corregido
+# Evita enviar al contexto de Docker archivos pesados o innecesarios.
+# ========================================================================================
+
+bin/
+obj/
+.vs/
+.vscode/
+.git/
+.gitignore
+.gitattributes
+
+*.user
+*.suo
+*.log
+*.tmp
+
+TestResults/
+coverage/
+
+Dockerfile.old
+docker-compose.override.yml
